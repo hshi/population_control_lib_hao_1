@@ -3,11 +3,11 @@
 #endif
 #include <iostream>
 
-//#include "thread_mc_data_manipulate.h"
+#include "pop_control.h"
 
 using namespace std;
 
-//void mc_data_manipulate_test();
+void pop_control_test();
 
 int main(int argc, char** argv)
 {
@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 #endif
 
     if(rank==0) cout<<"\n\n\n=======Testing======="<<endl;
-    //mc_data_manipulate_test();
+    pop_control_test();
 
 #ifdef MPI_HAO
     MPI_Finalize();
