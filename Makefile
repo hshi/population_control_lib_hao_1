@@ -7,16 +7,19 @@ runtest := mpirun -np 4 runtest
 
 FLAGS   := -Wall -O3 -std=c++11 -I./inc
 HAOFLG  := -I/home/boruoshihao/lib/lib_hao/mpi/include
-HAOLIB  := -L/home/boruoshihao/lib/lib_hao/mpi/lib -lkahanerrhao -lmatrixhao -lmpihao
+HAOLIB  := -L/home/boruoshihao/lib/lib_hao/mpi/lib -lrandomhao -lmatrixhao -lmpihao
 #HAOFLG  := -I/home/boruoshihao/lib/lib_hao/serial/include
 #HAOLIB  := -L/home/boruoshihao/lib/lib_hao/serial/lib -lkahanerrhao -lmatrixhao -lmpihao
 MPIFLG  :=
 MPILIB  :=
 MFLG    := -DUSE_MKL -fopenmp -m64 -I/opt/intel/mkl/include
 MLIB    := -Wl,--no-as-needed -L/opt/intel/mkl/lib/intel64 -lmkl_intel_lp64 -lmkl_core -lmkl_gnu_thread -ldl -lpthread -lm
+RDFLG   := -DPOINTER_SIZE=8 -I/home/boruoshihao/sprng/sprng2.0/include
+RDLIB   := -L/home/boruoshihao/sprng/sprng2.0/lib -lsprng -L/opt/gmp/lib -lgmp
 
-FLAGSALL:= $(FLAGS) $(HAOFLG) $(MPIFLG) $(MFLG)
-LIBSALL :=          $(HAOLIB) $(MPILIB) $(MLIB)
+
+FLAGSALL:= $(FLAGS) $(HAOFLG) $(MPIFLG) $(MFLG) ${RDFLG}
+LIBSALL :=          $(HAOLIB) $(MPILIB) $(MLIB) ${RDLIB}
 
 SRCS      := $(wildcard src/*.cpp)
 SRCOBJS   := ${SRCS:.cpp=.o}

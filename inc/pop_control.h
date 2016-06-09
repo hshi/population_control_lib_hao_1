@@ -4,6 +4,6 @@
 #include<iostream>
 #include<vector>
 
-std::vector<long> pop_configuration(const std::vector<double>& weight);
+std::vector<long> pop_configuration(long size, const std::vector<double>& weight);
 
 #endif
