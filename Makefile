@@ -68,4 +68,4 @@ define OBJECT_DEPENDS_ON_CORRESPONDING_HEADER
     $(1) : ${1:src/%.o=inc/%.h}
 endef
 
-$(foreach object_file,$(SRCOBJS),$(eval $(call OBJECT_DEPENDS_ON_CORRESPONDING_HEADER,$(object_file)))) 
+#$(foreach object_file,$(SRCOBJS),$(eval $(call OBJECT_DEPENDS_ON_CORRESPONDING_HEADER,$(object_file)))) 

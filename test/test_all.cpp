@@ -2,9 +2,7 @@
 #include <mpi.h>
 #endif
 #include <iostream>
-
 #include "random_hao.h"
-#include "pop_control.h"
 
 using namespace std;
 
