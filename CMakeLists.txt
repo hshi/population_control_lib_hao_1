@@ -13,24 +13,26 @@ set(CMAKE_CXX_FLAGS "${COMPILER_EXTRA_FLAG}" ${CMAKE_CXX_FLAGS})
 
 set(lib_all "")
 
-#For libaray hao:mpi and randomhao
-find_package(mpihao REQUIRED)
-include_directories(${mpihao_include_dirs})
-set(lib_all ${lib_all} ${mpihao_libraries})
+#For GMP library
+find_package(gmp REQUIRED)
+set(lib_all ${gmp_libraries} ${lib_all})
 
-find_package(randomhao REQUIRED)
-include_directories(${randomhao_include_dirs})
-set(lib_all ${lib_all} ${randomhao_libraries})
-
-#For sprng
+#For Sprng library
 add_definitions(-DPOINTER_SIZE=8)
 find_package(sprng REQUIRED)
 include_directories(${sprng_include_dirs})
-set(lib_all ${lib_all} ${sprng_libraries})
+set(lib_all ${sprng_libraries} ${lib_all})
 
-#For GMP library
-find_package(gmp REQUIRED)
-set(lib_all ${lib_all} ${gmp_libraries})
+
+#For libaray hao:mpi and randomhao
+find_package(mpihao REQUIRED)
+include_directories(${mpihao_include_dirs})
+set(lib_all ${mpihao_libraries} ${lib_all})
+
+find_package(randomhao REQUIRED)
+include_directories(${randomhao_include_dirs})
+set(lib_all ${randomhao_libraries} ${lib_all})
+
 
 include_directories(inc)
 
