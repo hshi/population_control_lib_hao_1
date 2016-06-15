@@ -16,8 +16,10 @@ class Double_pop
 
     Double_pop& operator  = (const Double_pop& x);
 
+#ifdef MPI_HAO
     std::vector<char> pack();
     void unpack(const std::vector<char>& buf);
+#endif
 };
 
 

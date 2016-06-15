@@ -54,7 +54,11 @@ void pop_control_double_test()
     pop_control(walker_pop, table);
 
     vector<double> walker_gather; if(rank==0) walker_gather.resize(L);
+#ifdef MPI_HAO
     MPI_Gather(walker.data(), L_chunk, MPI_DOUBLE, walker_gather.data(), L_chunk, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+#else
+    walker_gather=walker;
+#endif
 
     if(rank==0)
     {

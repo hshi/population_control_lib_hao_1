@@ -1,3 +1,5 @@
+#ifdef MPI_HAO
+
 #include <climits>
 #include "pop_control.h"
 
@@ -127,3 +129,5 @@ int deter_buf_recv_number(const vector<int>& table_recv)
     }
     return count;
 }
+
+#endif

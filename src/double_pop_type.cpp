@@ -15,6 +15,8 @@ Double_pop& Double_pop::operator  = (const Double_pop& x)
     return *this;
 }
 
+#ifdef MPI_HAO
+
 vector<char> Double_pop::pack()
 {
     vector<char> buf(Nbuf);
@@ -35,3 +37,5 @@ void Double_pop::unpack(const vector<char>& buf)
     MPI_Unpack(buf.data(), Nbuf, &posit, number, 1, MPI_DOUBLE, MPI_COMM_WORLD);
     if(posit!=Nbuf) {cout<<"ERROR in unpack!!! posit does not equal Nbuf! "<<endl; exit(1);}
 }
+
+#endif
