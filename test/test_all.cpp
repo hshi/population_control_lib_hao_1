@@ -16,7 +16,6 @@ int main(int argc, char** argv)
     MPI_Init(&argc,&argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 #endif
-    random_hao_init(985456376,1);
 
     if(rank==0) cout<<"\n\n\n=======Testing======="<<endl;
     pop_control_test();

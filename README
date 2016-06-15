@@ -5,5 +5,7 @@ The c++ library can be used for general population control in QMC.
 
 This project is licensed under the terms of the MIT license.
 
+* Read through the code again
+* Write userguide? Who want to use the program need to set a class.
 * Change libhao_download.py
 * Write the note about population control
