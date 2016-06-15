@@ -5,7 +5,10 @@ The c++ library can be used for general population control in QMC.
 
 This project is licensed under the terms of the MIT license.
 
-* Read through the code again
-* Write userguide? Who want to use the program need to set a class.
-* Change libhao_download.py
-* Write the note about population control
+In order to use the library, we need to set up a class T for walker.
+1. Member variables of T are pointer, point to those need population control.
+2. There are pack() and unpack() member function to pack the data and unpack the data.
+3. There is a member variable Nbuf, means size of pack.
+4. Equal asignment function.
+
+There is an example of class T in this library in double_pop_type.h and double_pop_type.cpp
