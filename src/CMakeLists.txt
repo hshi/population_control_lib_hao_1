@@ -1,5 +1,7 @@
-set(popcontrol_srcs double_pop_type.cpp  pop_aux.cpp  pop_configuration.cpp)
+set(src_lib popcontrolhao)
 
-add_library(popcontrolhao STATIC ${popcontrol_srcs})
+file(GLOB srcs "*.cpp")
 
-install(TARGETS popcontrolhao  DESTINATION lib)
+add_library(${src_lib} STATIC ${srcs})
+
+install(TARGETS ${src_lib}  DESTINATION lib)

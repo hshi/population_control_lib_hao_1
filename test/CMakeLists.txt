@@ -1,7 +1,11 @@
-set(popcontrol_test_srcs pop_control_test.cpp  test_all.cpp)
+set(test_exe popcontroltest)
 
-add_executable(popcontroltest ${popcontrol_test_srcs})
-target_link_libraries(popcontroltest popcontrolhao)
-target_link_libraries(popcontroltest ${lib_all})
+file(GLOB test_srcs "*.cpp")
 
-install(TARGETS popcontroltest DESTINATION test)
+add_executable(${test_exe} ${test_srcs})
+
+target_link_libraries(${test_exe} popcontrolhao)
+
+target_link_libraries(${test_exe} ${lib_all})
+
+install(TARGETS ${test_exe}  DESTINATION test)

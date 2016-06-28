@@ -1,3 +1,3 @@
-set(header double_pop_type.h  pop_control.h)
+file(GLOB header "*.h")
 
 install(FILES ${header}  DESTINATION include)
