@@ -19,21 +19,15 @@ set(lib_all "")
    set(lib_all ${gmp_libraries} ${lib_all})
    
    #For Sprng library
-   add_definitions(-DPOINTER_SIZE=8)
    find_package(sprng REQUIRED)
+   add_definitions(${sprng_definitions})
    include_directories(${sprng_include_dirs})
    set(lib_all ${sprng_libraries} ${lib_all})
    
-   #For library hao:mpi
-   find_package(mpihao REQUIRED)
-   include_directories(${mpihao_include_dirs})
-   set(lib_all ${mpihao_libraries} ${lib_all})
-
-   #For library hao:randomhao
-   find_package(randomhao REQUIRED)
-   include_directories(${randomhao_include_dirs})
-   set(lib_all ${randomhao_libraries} ${lib_all})
-
+   #For library hao:mpi randomhao
+   find_package(libhao0 REQUIRED)
+   include_directories(${libhao0_include_dirs})
+   set(lib_all ${mpihao_libraries} ${randomhao_libraries} ${lib_all})
 
 include_directories(inc)
 
