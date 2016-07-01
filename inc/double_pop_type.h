@@ -7,7 +7,7 @@
 class Double_pop
 {
    public:
-    int Nbuf;
+    static int Nbuf;
     double* number;
 
     Double_pop();
@@ -17,10 +17,9 @@ class Double_pop
     Double_pop& operator  = (const Double_pop& x);
 
 #ifdef MPI_HAO
-    std::vector<char> pack();
+    std::vector<char> pack() const;
     void unpack(const std::vector<char>& buf);
 #endif
 };
-
 
 #endif

@@ -2,10 +2,11 @@
 #include "double_pop_type.h"
 
 using namespace std;
+int Double_pop::Nbuf = 8;
 
-Double_pop::Double_pop():Nbuf(8) {}
+Double_pop::Double_pop() {}
 
-Double_pop::Double_pop(double& number_in):Nbuf(8) {number=&number_in;}
+Double_pop::Double_pop(double& number_in) {number=&number_in;}
 
 Double_pop::~Double_pop() {}
 
@@ -17,7 +18,7 @@ Double_pop& Double_pop::operator  = (const Double_pop& x)
 
 #ifdef MPI_HAO
 
-vector<char> Double_pop::pack()
+vector<char> Double_pop::pack() const
 {
     vector<char> buf(Nbuf);
 
