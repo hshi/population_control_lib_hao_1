@@ -24,8 +24,8 @@ void pop_configuration_test()
         {
             if( (b[i]+1-b_exact[i]) !=0 ) flag++;
         }
-        if(flag==0) cout<<"Pop_configuration passed the test!\n";
-        else cout<<"Warning!!!!Pop_configuration failed the test!\n";
+        if(flag==0) cout<<"PASSED! Pop_configuration passed the test!"<<endl;
+        else cout<<"Warning!!!!Pop_configuration failed the test!"<<endl;
     }
 }
 
@@ -67,8 +67,8 @@ void pop_control_double_test()
         {
             if(std::abs(walker_gather[i]-table[i]*1.0)>1e-15) flag++;
         }
-        if(flag==0) cout<<"Pop_control passed double test!\n";
-        else cout<<"Warning!!!!Pop_control failed double test!\n";
+        if(flag==0) cout<<"PASSED! Pop_control passed double test!"<<endl;
+        else cout<<"Warning!!!!Pop_control failed double test!"<<endl;
     } 
     //if(rank==0) for(int i=0; i<L; i++) cout<<walker_gather[i]<<" "; cout<<endl; 
 }
