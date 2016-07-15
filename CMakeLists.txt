@@ -11,6 +11,8 @@ add_definitions(${COMPILER_EXTRA_DEF})
 #For c++ flag
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+include_directories(inc)
+
 #For library
 set(lib_all "")
 
@@ -28,8 +30,6 @@ set(lib_all "")
    find_package(libhao0 REQUIRED)
    include_directories(${libhao0_include_dirs})
    set(lib_all ${mpihao_libraries} ${randomhao_libraries} ${lib_all})
-
-include_directories(inc)
 
 add_subdirectory(inc)
 
